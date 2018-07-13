@@ -43,7 +43,7 @@ public class GooglePhotosDownloader {
 
             HttpTransport httpTransport = GoogleNetHttpTransport.newTrustedTransport();
 
-            DataStoreFactory dataStoreFactory = new FileDataStoreFactory(new File("oauth2"));
+            DataStoreFactory dataStoreFactory = new FileDataStoreFactory(new File(runtimeConfigurations.getFileDataStorePath()));
 
             InputStreamReader credentialInputStream = new InputStreamReader(new FileInputStream(runtimeConfigurations.getGoogleCredentialsPath()));
 
@@ -88,7 +88,7 @@ public class GooglePhotosDownloader {
 
             List<MediaItem> allMediaInAlbum = googlePhotosService.getAlMediaItemsInAlbum(albumId);
 
-            LOG.debug("Total photos in album:{}", allMediaInAlbum.size());
+            LOG.debug("Total photos in album: {}", allMediaInAlbum.size());
 
             List<MediaItem> mediaItemsToBeDownloaded = new ArrayList<>();
 

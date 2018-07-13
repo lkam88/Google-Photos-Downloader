@@ -7,6 +7,7 @@ public class RuntimeConfigurations {
     private Integer photosDownloadWidth;
     private Integer photosDownloadHeight;
     private Integer downloadIntervalInMinutes;
+    private String fileDataStorePath;
 
     public String getAlbumName() {
         return albumName;
@@ -54,5 +55,13 @@ public class RuntimeConfigurations {
 
     public void setDownloadIntervalInMinutes(Integer downloadIntervalInMinutes) {
         this.downloadIntervalInMinutes = downloadIntervalInMinutes;
+    }
+
+    public String getFileDataStorePath() {
+        return fileDataStorePath;
+    }
+
+    public void setFileDataStorePath(String fileDataStorePath) {
+        this.fileDataStorePath = fileDataStorePath;
     }
 }
